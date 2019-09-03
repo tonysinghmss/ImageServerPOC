@@ -1,0 +1,1 @@
+A POC usign flask-restful to upload image by doing a POST call.
