@@ -21,7 +21,9 @@ class UploadImage(Resource):
         img_path = os.path.join(root_dir, 'static', 'images', img_name)
         with open(img_path, 'wb') as fh:
             fh.write(img.read())
-        return json.dumps(img_path), 200
+        resp = make_response(img_name)
+        resp.content_type = 'text/plain'
+        return resp
 
 class DownloadImage(Resource):
     def __init__(self):
